@@ -1,13 +1,15 @@
-# Variabler
+# bord = tom för tio rutor
 board = [' ' for x in range(10)]
 
-
+# vilken ruta = vilken bokstav
 def insertLetter(letter,pos):
     board[pos] = letter
 
+# Om ruta = ej tagen ge tom ruta
 def spaceIsFree(pos):
     return board[pos] == ' '
 
+# Skapa spelbrädet
 def printBoard(board):
     print('   |   |   ')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
@@ -21,12 +23,14 @@ def printBoard(board):
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
     print('   |   |   ')
 
+# är brädet fullt?
 def isBoardFull(board):
     if board.count(' ') > 1:
         return False
     else:
         return True
 
+# vem vann?
 def IsWinner(b,l):
     return ((b[1] == l and b[2] == l and b[3] == l) or
     (b[4] == l and b[5] == l and b[6] == l) or
@@ -37,6 +41,7 @@ def IsWinner(b,l):
     (b[1] == l and b[5] == l and b[9] == l) or
     (b[3] == l and b[5] == l and b[7] == l))
 
+# spelar val
 def playerMove():
     run = True
     while run:
@@ -55,6 +60,7 @@ def playerMove():
         except:
             print('Please type a number')
 
+# dator val
 def computerMove():
     possibleMoves = [x for x , letter in enumerate(board) if letter == ' ' and x != 0  ]
     move = 0
@@ -89,12 +95,14 @@ def computerMove():
         move = selectRandom(edgesOpen)
         return move
 
+# randomizer
 def selectRandom(li):
     import random
     ln = len(li)
     r = random.randrange(0,ln)
     return li[r]
 
+# huvud funktion
 def main():
     print("Welcome to the game!")
     printBoard(board)
@@ -125,6 +133,7 @@ def main():
     if isBoardFull(board):
         print("Tie game")
 
+# start och stop
 while True:
     x = input("Do you want to play? Press y for yes or n for no (y/n)\n")
     if x.lower() == 'y':
