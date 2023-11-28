@@ -1,4 +1,4 @@
-# bord = tom för tio rutor
+# bord = tom för tio rutor.
 bräde = [' ' for x in range(10)]
 
 # vilken ruta = vilken bokstav
