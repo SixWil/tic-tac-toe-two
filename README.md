@@ -1,2 +1,2 @@
 # python-tic-tac-toe
-A tic-tac-toe game built with python. It is been played on the terminal
+Python 3 i rad, körs i konsollen.
